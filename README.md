@@ -62,7 +62,7 @@ Word prediction
 
 Word prediction is accomplished by using what is called an n-gram,
 basically an statistical analysis to obtain prediction when given a
-certain $n-1$ things, what’s is the $n$th thing that follows. In this
+certain n-1 things, what’s is the n-th thing that follows. In this
 case we will use `1` and `2` word grams to predict given a certain word
 or two which one comes next. To make the prediction system more
 efficient and less cumbersome, the statistical analysis will be made
