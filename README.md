@@ -34,7 +34,7 @@ we have a word history input of these commands.
     cat    = 32
     cal    = 16
 
-![image](word_example)
+![image](word_example.png)
 
 [ex1]
 
@@ -81,4 +81,6 @@ process (ex. the common appearance of the symbol `/` in paths).
 
 References
 ==========
-bibliography: project.bib
+>R. Sedgewick and K. Wayne,Tries,(http://algs4.cs.princeton.edu/lectures/52Tries.pdf)
+>N. Johnson,BK-Trees,(http://blog.notdot.net/2007/4/Damn-Cool-Algorithms-Part-1-BK-Trees)
+>Bayesian Interference,(https://en.wikipedia.org/wiki/Bayesian_inference)
