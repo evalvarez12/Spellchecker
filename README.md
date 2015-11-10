@@ -60,17 +60,17 @@ called as BK-Trees, a small explanation of how they work can be found in
 Word prediction
 ---------------
 
-Word prediction is accomplished by using what is called and $n$-gram,
+Word prediction is accomplished by using what is called an n-gram,
 basically an statistical analysis to obtain prediction when given a
 certain $n-1$ things, what’s is the $n$th thing that follows. In this
-case we will use $1$ and $2$ word grams to predict given a certain word
+case we will use `1` and `2` word grams to predict given a certain word
 or two which one comes next. To make the prediction system more
 efficient and less cumbersome, the statistical analysis will be made
 using Bayesian interference @Baye which is essentially weighting the
 probability of an event with a specified hypothesis. In this case our
 hypothesis will be that command lines almost always come in the
 structure of `command options paths`, with certain exemptions (ex. lines
-using $|$). For example if the user inputs the following line:
+using `|`). For example if the user inputs the following line:
 `$HOME/dir/ another_dir/`, if we know that `$HOME/dir/` is not a command
 using our hypothesis we can discard this input as noise and not take it
 into account in the analysis. One challenge that arises from this is
@@ -78,37 +78,7 @@ that we need to be able to characterize in which category each word
 falls, luckily for us there are some key aspects that will help in that
 process (ex. the common appearance of the symbol `/` in paths).
 
-Development
-===========
-
-In this section I will give a brief description of how the development
-process is going to work, including some approximate time deadlines.
-
-Step 1: Framework-<span>*2 weeks*</span>
-----------------------------------------
-
-In this step the initially implementation on a regular computer of the
-theory presented will be created using `Python` and `Sqlite`. The idea
-is to create the kernel that will be able to accomplish the desired
-objectives. This section will include training with test data, in the
-form of commonly used commands and paths in a Unix system and history
-files of users command line inputs.
-
-Step 2: Adaptation-<span>*1 weeks*</span>
------------------------------------------
-
-Adapting the framework to fit a mobile phone, this means adapting the
-code to an App and making sure everything is lightweight and efficient
-to be able to run on a decent phone. If needed we will go back to step 1
-to optimize the kernel until it runs smoothly.
-
-Step 3: Technicals-<span>*3 weeks*</span>
------------------------------------------
-
-In this step we will deal with the technical stuff needed to create the
-actual App, that is establishing the SSH connection service and user
-interface.
 
 References
 ==========
-bibliography: bibliography.bib
+bibliography: project.bib
