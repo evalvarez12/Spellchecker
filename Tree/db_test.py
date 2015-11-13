@@ -22,9 +22,7 @@ class TestTree(unittest.TestCase) :
     t2=tr.Tree()
     db.load(t2,'test.db')
     a=t.traverse('')
-    print a 
     b=t2.traverse('')
-    print b
     self.assertItemsEqual(a,b) 
     
 

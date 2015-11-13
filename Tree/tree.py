@@ -43,7 +43,7 @@ class Tree(object) :
 
       return l   
     
-    def fuzzy_traverse(self,word,err) :
+  def fuzzy_traverse(self,word,err) :
     if word :
       try :
         return {(word[0]+k):v for k,v in self.trees[word[0]].traverse(word[1:]).iteritems()}
