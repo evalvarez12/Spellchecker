@@ -1,5 +1,7 @@
 # Predictive-shell
 
+[![Build Status](https://travis-ci.org/evalvarez12/Predictive-shell.svg?branch=master)](https://travis-ci.org/evalvarez12/Predictive-shell)
+
 Objective
 =========
 
@@ -36,9 +38,8 @@ we have a word history input of these commands.
 
 ![image](word_example.png)
 
-[ex1]
 
-The image [ex1] represents the trie formed using that input history. The
+The image above represents the trie formed using that input history. The
 nodes with numbers on them represent the number of times the input of
 the word formed by following the tree from root to that node has been
 used by the user. Imagine the user enters the character `c` the results
