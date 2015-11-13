@@ -1,0 +1,9 @@
+language: phython
+
+python:
+  - "2.6"
+  - "2.7"
+
+script: 
+  -Tree/python tree_test.py
+  -Tree/python db_test.py
