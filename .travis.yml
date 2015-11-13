@@ -5,5 +5,5 @@ python:
   - "2.7"
 
 script: 
-  - Tree/python tree_test.py
-  - Tree/python db_test.py
+  - python Tree/tree_test.py
+  - python Tree/db_test.py
