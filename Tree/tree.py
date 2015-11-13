@@ -12,7 +12,7 @@ class Tree(object) :
     self.trees = {}
     self.number = 0
     
-  def insert_word(self,word) :
+  def insert_word(self,word,times=1) :
     if word :
       if word[0] not in self.trees :
         tree1 = Tree()
@@ -20,7 +20,19 @@ class Tree(object) :
 
       self.trees[word[0]].insert_word(word[1:])
     else :
-      self.number += 1
+      print "motherfucker ", times
+      self.number += times
+
+  def insert_word_times(self,word,times) :
+    if word :
+      if word[0] not in self.trees :
+        tree1 = Tree()
+        self.trees[word[0]] = tree1
+
+      self.trees[word[0]].insert_word(word[1:])
+    else :
+      print "motherfucker TIMES ", times
+      self.number += times
 
 
   def word_count(self,word) :
@@ -43,7 +55,7 @@ class Tree(object) :
       if self.trees and self.number == 0:
 	l=[]
       else :
-	l= ["-"+str(self.number)]
+	l= [str(self.number)]
       for k,v in self.trees.iteritems() :
 	l+=[k + i for i in v.traverse(word)]
       return l      
