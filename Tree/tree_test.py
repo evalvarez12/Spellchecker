@@ -6,6 +6,7 @@ list_words =["test","command","cat","caterpillar","chown","chmod","chroot","tabl
 for i in list_words :
   t.insert_word(i)
 
+t.insert_word("words",100)
 
 class TestTree(unittest.TestCase) :
   #def test_create_tree(self) :
@@ -15,13 +16,13 @@ class TestTree(unittest.TestCase) :
     self.assertEqual(t.word_count("word"),3)
     
   def test_traverse_1(self) :
-    self.assertItemsEqual(t.traverse("t"),['test1','table1']) 
+    self.assertItemsEqual(t.traverse("t"),{'test':1,'table':1}) 
     
   def test_traverse_2(self) :
-    self.assertItemsEqual(t.traverse("ch"),['chown1','chmod1','chroot1'])
+    self.assertItemsEqual(t.traverse("c"),{'chown':1,'chmod':1,'chroot':1})
   
   def test_traverse_3(self) :
-    self.assertItemsEqual(t.traverse("w"),['word3','words1','wordd1'])  
+    self.assertItemsEqual(t.traverse("w"),{'word':3,'words':101,'wordd':1})  
     
   
   

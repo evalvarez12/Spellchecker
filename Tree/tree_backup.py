@@ -34,24 +34,19 @@ class Tree(object) :
       
   def traverse(self,word) :
     if word :
-      #try :
-        #return [word[0] +  i for i in self.trees[word[0]].traverse(word[1:])]
-      return {(word[0]+k):v for k,v in self.trees[word[0]].traverse(word[1:]).iteritems()}
-      #return self.trees[word[0]].traverse(word[1:])
-      #except : 
-        #print "Cant tranverse using " + word 
+      try :
+        return [word[0] +  i for i in self.trees[word[0]].traverse(word[1:])]
+      #return {(word[0]+k):v for k,v in self.trees[word[0]].traverse(word[1:])}
+      except : 
+        print "Cant tranverse using " + word 
     else :
-      #if self.number == 0:
-	#l=[]
-      #else :
-	#l= [str(self.number)]
-      if self.number != 0  :
-	l={'':self.number}
+      if  self.number == 0:
+	l=[]
       else :
-	l={}
+	l= [str(self.number)]
+      #if self.number != 0 and not self.trees :
       for k,v in self.trees.iteritems() :
-	l.update({(k+i):j for i,j in v.traverse(word).iteritems()})
-	#l+=[k + i for i in v.traverse(word)]
+	l+=[k + i for i in v.traverse(word)]
       return l      
 
     
