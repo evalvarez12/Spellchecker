@@ -4,43 +4,24 @@ import tree as tr
 
 
 def dump(t,db_name) :
-  try :
-    con=lite.connect(db_name)
+  con=lite.connect(db_name)
+  with con  :
     cur = con.cursor() 
     a=t.traverse('')
-    print " A: ", a
-    cur.execute("CREATE TABLE if not exists Root(word TEXT, times INT)")
-    cur.execute("INSERT INTO Root VALUES('pene',223)")
+    cur.execute("DROP TABLE if exists root")
+    cur.execute("CREATE TABLE root(word TEXT, times INT)")
     for k,v in a.iteritems() :
       s="INSERT INTO Root VALUES(" + "'" + k + "'"  + "," + str(v) + ")"
       cur.execute(s)
-    
-  except lite.Error, e :  
-    print "Error %s:" % e.args[0]
-    sys.exit(1)
-    
-  #finally:
-    #if con:
-        #con.close()
-    
-    
+
 
 def load(t,db_name) :
-  try :
-    con=lite.connect(db_name)
+  con=lite.connect(db_name)
+  with con :
     cur = con.cursor() 
-    for k,v in a.iteritems() :
-      s="SELECT * FROM root"
-      cur.execute(s)
-      items = cur.fetchall()
-      print items
+    s="SELECT * FROM root"
+    cur.execute(s)
+    items = cur.fetchall()
+    for i in items :
+      t.insert_word(str(i[0]),i[1])
     
-  except lite.Error, e :  
-    print "Error %s:" % e.args[0]
-    sys.exit(1)
-    
-  finally:
-    if con:
-        con.close()
-    
-
