@@ -44,21 +44,26 @@ class Tree(object) :
       return l   
     
   def fuzzy_traverse(self,word,err) :
-    if word :
-      try :
-        return {(word[0]+k):v for k,v in self.trees[word[0]].traverse(word[1:]).iteritems()}
-      except : 
-        print "Cant tranverse using " + word 
-    else :
-
-      if self.number != 0  :
-	l={'':self.number}
-      else :
-	l={}
-      for k,v in self.trees.iteritems() :
-	l.update({(k+i):j for i,j in v.traverse(word).iteritems()})
-
-      return l 
+    l={}
+    if err >= 0 :
+      if self.number != 0:
+	l['']=self.number
+      if self.trees :
+	if not word : word = ' ' 
+        for k,v in self.trees.iteritems() :
+	  l.update({(k+i):j for i,j in v.fuzzy_traverse(word[1:],err+int(word[0]==k)-1).iteritems()})
+    return l
 
     
-      
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
