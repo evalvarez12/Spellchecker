@@ -24,6 +24,11 @@ class TestTree(unittest.TestCase) :
   def test_traverse_3(self) :
     self.assertItemsEqual(t.traverse("w"),{'word':3,'words':101,'wordd':1})  
     
+  def test_fuzzy_1(self) :
+    self.assertItemsEqual(t.fuzzy("chrodt",1),{'chroot':1}) 
+    
+  def test_fuzzy_2(self) :
+    self.assertItemsEqual(t.fuzzy("chmoot",2),{'chroot':1,'chmod':1})  
   
 
 
