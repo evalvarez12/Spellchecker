@@ -10,7 +10,7 @@ Algorithm
 
 Word completion is accomplished by using what is called a
 trie, that is an organization of words using the letters as the nodes of
-a tree, which by following the one way edges one recovers the words[^1].
+a tree, which by following the one way edges one recovers the words<sup>1</sup>.
 Tries provide a simple yet effective way to do word completion by
 storing how many times each word is used in the tree itself, thus
 allowing for a prediction of the incomplete input based on the user
@@ -40,12 +40,12 @@ The problem of spell checking or “fuzzy
 search” is for example when the user inputs the following `chdwm` we
 want our program to include `chown` as the first suggestion. To accomplish
 this we want to traverse in a smart way our tree by using a measure called
-the Levenshtein Distance[^2], which simply represents the number
+the Levenshtein Distance<sup>2</sup>, which simply represents the number
 of characters we need to exchange on one word to get to another.
 
 
 
 References
 ==========
-[^1]: R. Sedgewick and K. Wayne,Tries,(http://algs4.cs.princeton.edu/lectures/52Tries.pdf)
-[^2]: N. Johnson,BK-Trees,(http://blog.notdot.net/2007/4/Damn-Cool-Algorithms-Part-1-BK-Trees)
+1: R. Sedgewick and K. Wayne,Tries,(http://algs4.cs.princeton.edu/lectures/52Tries.pdf)
+2: N. Johnson,BK-Trees,(http://blog.notdot.net/2007/4/Damn-Cool-Algorithms-Part-1-BK-Trees)
