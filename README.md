@@ -1,6 +1,6 @@
 # Spell checker
 
-[![Build Status](https://travis-ci.org/evalvarez12/Predictive-shell.svg?branch=master)](https://travis-ci.org/evalvarez12/Predictive-shell)
+[![Build Status](https://travis-ci.org/evalvarez12/Spellchecker.svg?branch=master)](https://travis-ci.org/evalvarez12/Spellchecker)
 
 Simple spell correction and word prediction using a trie structure.
 
